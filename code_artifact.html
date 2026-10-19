@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人介紹 | Profile</title>
+    <!-- 載入 Google 字型：Noto Serif TC 及 Noto Sans TC 營造日系清新、溫潤質感 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #F7F5F0;
+            /* 和室米白底色 */
+            --card-bg: #FFFFFF;
+            /* 純白卡片背景 */
+            --text-main: #333333;
+            /* 墨色文字 */
+            --text-sub: #7A7570;
+            /* 灰褐色副標題 */
+            --accent: #A85747;
+            /* 茜色（日系沉穩紅/陶土色）作為點綴 */
+            --border-color: #EBE5DD;
+            /* 柔和邊框色 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 480px;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .image-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .bio {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 32px;
+            padding: 0 10px;
+            text-align: justify;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 1px;
+            background-color: var(--accent);
+        }
+
+        .interests-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .interest-item {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-card">
+        <!-- 圖片區塊：使用 placeholder 圖片作為預設範例 -->
+        <div class="image-container">
+            <img src="./christian-agbede-f-1xguymk8c-unsplash.jpg" alt="個人頭貼"
+                onerror="this.src='https://placehold.co/300x300/eee/999?text=Image'">
+        </div>
+
+        <!-- 姓名與副標題 -->
+        <h1 class="name">city cofe</h1>
+        <p class="subtitle">初學者</p>
+
+        <!-- 簡介區塊 -->
+        <p class="bio">
+            你好！我是一個剛踏入網頁世界的新手。喜歡簡約、舒適的日系美學，目前正在學習用最純粹的 HTML 與 CSS 打造乾淨清爽的數位小天地。
+        </p>
+
+        <!-- 興趣區塊 -->
+        <div>
+            <h2 class="section-title">興趣</h2>
+            <ul class="interests-list">
+                <li class="interest-item">手沖咖啡🥤</li>
+                <li class="interest-item">底片攝影📸</li>
+                <li class="interest-item">閱讀散文👀</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
